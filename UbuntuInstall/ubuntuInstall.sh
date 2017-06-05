@@ -1,6 +1,8 @@
 #!/bin/bash
 # change /etc/apt/sources.list
 cp -f sources.list /etc/apt/
+sudo apt update
+sudo apt upgrade
 
 # intall some package
 # git vim
@@ -34,8 +36,8 @@ case $choice_chrome in
   sudo dpkg -i google-chrome-stable*
   sudo apt -f install
   # dowland switchyOmega
-  wget "https://github.com/FelisCatus/SwitchyOmega/releases/download/v2.4.6/SwitchyOmega.crx"
-  wget "https://github.com/FelisCatus/SwitchyOmega/wiki/GFWList.bak"
+  # wget "https://github.com/FelisCatus/SwitchyOmega/releases/download/v2.4.6/SwitchyOmega.crx"
+  # wget "https://github.com/FelisCatus/SwitchyOmega/wiki/GFWList.bak"
   ;;
   *)
   echo "chrome will NOT be installed"
