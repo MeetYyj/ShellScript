@@ -22,3 +22,4 @@ then
 else
   echo "source failed"
 fi
+sudo apt install ros-kinetic-opencv3

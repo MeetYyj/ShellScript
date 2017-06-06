@@ -1,6 +1,8 @@
 #!/bin/bash
 sudo apt update
 
+#install vim
+sudo apt install -y vim
 
 #install mjpg_streamer
 sudo apt install -y cmake libjpeg8-dev
