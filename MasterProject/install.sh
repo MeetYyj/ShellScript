@@ -6,11 +6,14 @@ sudo apt install -y vim
 
 #install mjpg_streamer
 sudo apt install -y cmake libjpeg8-dev
-mkdir Software
-cd Software
+mkdir $HOME/Software
+cd $HOME/Software
 sudo wget https://github.com/jacksonliam/mjpg-streamer/archive/master.zip
 unzip master.zip
 rm -f master.zip
 cd mjpg-streamer-master/mjpg-streamer-experimental
 make
 sudo make install
+cd /etc/init.d
+cp $HOME/wifirobot.sh .
+sudo update-rc.d wifirobot.sh defaults 95

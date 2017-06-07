@@ -19,6 +19,7 @@ case $choice_ssqt5 in
   sudo apt -y install shadowsocks-qt5
   echo "export http_proxy=http://127.0.0.1:1080" >> $HOME/.bashrc
   echo "export https_proxy=\$http_proxy" >> $HOME/.bashrc
+  source $HOME/.bashrc
   ;;
   *)
   echo "shadowsocks-qt5 will NOT be installed"
