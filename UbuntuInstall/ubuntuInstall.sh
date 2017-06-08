@@ -1,8 +1,8 @@
 #!/bin/bash
 # change /etc/apt/sources.list
-cp -f sources.list /etc/apt/
-sudo apt update
-sudo apt upgrade
+sudo cp sources.list /etc/apt/
+sudo apt -y update
+sudo apt -y upgrade
 
 # intall some package
 # git vim
@@ -14,8 +14,8 @@ read -p "Do you want to install shadowsocks-qt5?(y/n)" choice_ssqt5
 case $choice_ssqt5 in
   y|Y|yes|Yes|YES)
   echo "Start installing shadowsocks-qt5:"
-  sudo add-apt-repository ppa:hzwhuang/ss-qt5
-  sudo apt-get update
+  sudo add-apt-repository -y ppa:hzwhuang/ss-qt5
+  sudo apt -y update
   sudo apt -y install shadowsocks-qt5
   echo "export http_proxy=http://127.0.0.1:1080" >> $HOME/.bashrc
   echo "export https_proxy=\$http_proxy" >> $HOME/.bashrc
@@ -69,6 +69,8 @@ case $choice_zsh in
   echo "Start installing zsh:"
   sudo apt -y install zsh
   sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+  echo "export http_proxy=http://127.0.0.1:1080" >> $HOME/.zshrc
+  echo "export https_proxy=\$http_proxy" >> $HOME/.zshrc
   ;;
   *)
   echo "zsh will NOT be installed"
