@@ -76,3 +76,15 @@ case $choice_zsh in
   echo "zsh will NOT be installed"
   ;;
 esac
+
+# install zeal
+read -p "Do you want to install zeal?(y/n)" choice_zeal
+case $choice_zeal in
+  y|Y|yes|Yes|YES)
+  echo "Start installing zeal:"
+  sudo apt -y install zeal
+  ;;
+  *)
+  echo "zeal will NOT be installed"
+  ;;
+esac
