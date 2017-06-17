@@ -14,6 +14,9 @@ mysh=`echo "$SHELL" | awk -F '/' '{print $4}'`
 if [ "$mysh" = "zsh" ]
 then
   echo "source /opt/ros/kinetic/setup.zsh" >> ~/.zshrc
+  echo "alias rl=\"roslaunch\"" >> ~/.zshrc
+  echo "alias rmk=\"catkin_make\"" >> ~/.zshrc
+  echo "alias rr=\"rosrun\"" >> ~/.zshrc
   source ~/.zshrc
 elif [ "$mysh" = "bash" ]
 then
