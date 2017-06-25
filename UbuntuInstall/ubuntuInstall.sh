@@ -88,3 +88,15 @@ case $choice_zeal in
   echo "zeal will NOT be installed"
   ;;
 esac
+
+# install shutter
+read -p "Do you want to install shutter?(y/n)" choice_shutter
+case $choice_shutter in
+  y|Y|yes|Yes|YES)
+  echo "Start installing shutter:"
+  sudo apt -y install shutter
+  ;;
+  *)
+  echo "shutter will NOT be installed"
+  ;;
+esac
