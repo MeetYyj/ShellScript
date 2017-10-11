@@ -8,6 +8,8 @@ sudo apt -y upgrade
 # git vim
 sudo apt -y install git
 sudo apt -y install vim
+sudo apt -y install clang
+sudo apt -y install cmake
 
 # install shadowsocks-qt5
 read -p "Do you want to install shadowsocks-qt5?(y/n)" choice_ssqt5
