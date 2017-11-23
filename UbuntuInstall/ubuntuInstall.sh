@@ -102,3 +102,19 @@ case $choice_shutter in
   echo "shutter will NOT be installed"
   ;;
 esac
+
+
+# install pyhton shadowsocks
+read -p "Do you want to install shadowsocks pyhton?(y/n)" choice_sspyhton
+case $choice_sspython in
+  y|Y|yes|Yes|YES)
+  echo "Start installing shadowsocks python:"
+  apt-get install python-pip
+  pip install git+https://github.com/shadowsocks/shadowsocks.git@master
+  ;;
+  *)
+  echo "shadowsocks python will NOT be installed"
+  ;;
+esac
+
+
