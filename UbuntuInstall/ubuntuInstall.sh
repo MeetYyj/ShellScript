@@ -118,3 +118,17 @@ case $choice_sspython in
 esac
 
 
+
+# install pyhton tmux&tmuxinator
+read -p "Do you want to install tmux & tmuxinator?(y/n)" choice_tmux
+case $choice_tmux in
+  y|Y|yes|Yes|YES)
+  echo "Start installing tmux & tmuxinator:"
+  sudo apt install tmux
+  sudo apt install ruby
+  sudo gem install tmuxinator
+  ;;
+  *)
+  echo "shadowsocks python will NOT be installed"
+  ;;
+
