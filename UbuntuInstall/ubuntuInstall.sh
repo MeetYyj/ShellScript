@@ -8,6 +8,8 @@ sudo apt -y upgrade
 # git vim
 sudo apt -y install git
 sudo apt -y install vim
+sudo apt -y install clang
+sudo apt -y install cmake
 
 # install shadowsocks-qt5
 read -p "Do you want to install shadowsocks-qt5?(y/n)" choice_ssqt5
@@ -101,15 +103,45 @@ case $choice_shutter in
   ;;
 esac
 
-# copy dotfile from yyj
-read -p "Do you want to copy yyj's dotfile?(y/n)" choice_dotfile
-case $choice_dotfile in
+
+
+# install pyhton shadowsocks
+read -p "Do you want to install shadowsocks pyhton?(y/n)" choice_sspyhton
+case $choice_sspython in
   y|Y|yes|Yes|YES)
-  echo "git clone from yyj's dotfile"
-  git clone https://github.com/MeetYyj/dotfile.git
-  cp -r $HOME/dotfile $HOME
+  echo "Start installing shadowsocks python:"
+  apt-get install python-pip
+  pip install git+https://github.com/shadowsocks/shadowsocks.git@master
   ;;
   *)
-  echo "yyj's dotfile will NOT be installed"
+  echo "shadowsocks python will NOT be installed"
   ;;
 esac
+
+
+
+# install pyhton tmux&tmuxinator
+read -p "Do you want to install tmux & tmuxinator?(y/n)" choice_tmux
+case $choice_tmux in
+  y|Y|yes|Yes|YES)
+  echo "Start installing tmux & tmuxinator:"
+  sudo apt install tmux
+  sudo apt install ruby
+  sudo gem install tmuxinator
+  ;;
+  *)
+  echo "shadowsocks python will NOT be installed"
+  ;;
+
+  # copy dotfile from yyj
+  read -p "Do you want to copy yyj's dotfile?(y/n)" choice_dotfile
+  case $choice_dotfile in
+    y|Y|yes|Yes|YES)
+    echo "git clone from yyj's dotfile"
+    git clone https://github.com/MeetYyj/dotfile.git
+    cp -r $HOME/dotfile $HOME
+    ;;
+    *)
+    echo "yyj's dotfile will NOT be installed"
+    ;;
+ esac
