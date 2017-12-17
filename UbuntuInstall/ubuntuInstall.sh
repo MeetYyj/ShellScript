@@ -88,6 +88,7 @@ case $choice_shutter in
 esac
 
 
+
 # install pyhton shadowsocks
 read -p "Do you want to install shadowsocks pyhton?(y/n)" choice_sspython
 case $choice_sspython in
@@ -134,3 +135,15 @@ case $choice_zsh in
 esac
 
 # install zeal
+  # copy dotfile from yyj
+  read -p "Do you want to copy yyj's dotfile?(y/n)" choice_dotfile
+  case $choice_dotfile in
+    y|Y|yes|Yes|YES)
+    echo "git clone from yyj's dotfile"
+    git clone https://github.com/MeetYyj/dotfile.git
+    cp -r $HOME/dotfile $HOME
+    ;;
+    *)
+    echo "yyj's dotfile will NOT be installed"
+    ;;
+ esac
