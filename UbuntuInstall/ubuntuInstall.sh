@@ -94,6 +94,7 @@ read -p "Do you want to install shadowsocks pyhton?(y/n)" choice_sspython
 case $choice_sspython in
   y|Y|yes|Yes|YES)
   echo "Start installing shadowsocks python:"
+  sudo apt -y install libsodium-dev
   sudo apt -y install python-pip
   sudo pip install --upgrade pip
   pip install git+https://github.com/shadowsocks/shadowsocks.git@master
@@ -119,19 +120,6 @@ case $choice_tmux in
   ;;
 esac
 
-# copy dotfile from yyj
-read -p "Do you want to copy yyj's dotfile?(y/n)" choice_dotfile
-case $choice_dotfile in
-  y|Y|yes|Yes|YES)
-  echo "git clone from yyj's dotfile"
-  cd
-  git clone https://github.com/MeetYyj/dotfile.git
-  cp -r $HOME/dotfile $HOME
-  ;;
-  *)
-  echo "yyj's dotfile will NOT be installed"
-  ;;
-esac
 
 # copy dotfile from yyj
 read -p "Do you want to copy yyj's dotfile?(y/n)" choice_dotfile
