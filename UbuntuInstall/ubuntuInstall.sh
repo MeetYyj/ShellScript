@@ -12,21 +12,21 @@ sudo apt -y install clang
 sudo apt -y install cmake
 
 # install shadowsocks-qt5
-read -p "Do you want to install shadowsocks-qt5?(y/n)" choice_ssqt5
-case $choice_ssqt5 in
-  y|Y|yes|Yes|YES)
-  echo "Start installing shadowsocks-qt5:"
-  sudo add-apt-repository -y ppa:hzwhuang/ss-qt5
-  sudo apt -y update
-  sudo apt -y install shadowsocks-qt5
-  echo "export http_proxy=http://127.0.0.1:1080" >> $HOME/.bashrc
-  echo "export https_proxy=\$http_proxy" >> $HOME/.bashrc
-  source $HOME/.bashrc
-  ;;
-  *)
-  echo "shadowsocks-qt5 will NOT be installed"
-  ;;
-esac
+#read -p "Do you want to install shadowsocks-qt5?(y/n)" choice_ssqt5
+#case $choice_ssqt5 in
+#  y|Y|yes|Yes|YES)
+#  echo "Start installing shadowsocks-qt5:"
+#  sudo add-apt-repository -y ppa:hzwhuang/ss-qt5
+#  sudo apt -y update
+#  sudo apt -y install shadowsocks-qt5
+#  echo "export http_proxy=http://127.0.0.1:1080" >> $HOME/.bashrc
+#  echo "export https_proxy=\$http_proxy" >> $HOME/.bashrc
+#  source $HOME/.bashrc
+#  ;;
+#  *)
+#  echo "shadowsocks-qt5 will NOT be installed"
+#  ;;
+#esac
 
 
 # install chrome
