@@ -63,22 +63,6 @@ case $choice_sogou in
   ;;
 esac
 
-
-# install zsh
-read -p "Do you want to install zsh?(y/n)" choice_zsh
-case $choice_zsh in
-  y|Y|yes|Yes|YES)
-  echo "Start installing zsh:"
-  sudo apt -y install zsh
-  sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
-  echo "export http_proxy=http://127.0.0.1:1080" >> $HOME/.zshrc
-  echo "export https_proxy=\$http_proxy" >> $HOME/.zshrc
-  ;;
-  *)
-  echo "zsh will NOT be installed"
-  ;;
-esac
-
 # install zeal
 read -p "Do you want to install zeal?(y/n)" choice_zeal
 case $choice_zeal in
@@ -105,11 +89,12 @@ esac
 
 
 # install pyhton shadowsocks
-read -p "Do you want to install shadowsocks pyhton?(y/n)" choice_sspyhton
+read -p "Do you want to install shadowsocks pyhton?(y/n)" choice_sspython
 case $choice_sspython in
   y|Y|yes|Yes|YES)
   echo "Start installing shadowsocks python:"
-  apt-get install python-pip
+  sudo apt-get install python-pip
+  sudo pip install --upgrade pip
   pip install git+https://github.com/shadowsocks/shadowsocks.git@master
   ;;
   *)
@@ -131,4 +116,21 @@ case $choice_tmux in
   *)
   echo "shadowsocks python will NOT be installed"
   ;;
+esac
 
+# install zsh
+read -p "Do you want to install zsh?(y/n)" choice_zsh
+case $choice_zsh in
+  y|Y|yes|Yes|YES)
+  echo "Start installing zsh:"
+  sudo apt -y install zsh
+  sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+  echo "export http_proxy=http://127.0.0.1:1080" >> $HOME/.zshrc
+  echo "export https_proxy=\$http_proxy" >> $HOME/.zshrc
+  ;;
+  *)
+  echo "zsh will NOT be installed"
+  ;;
+esac
+
+# install zeal
