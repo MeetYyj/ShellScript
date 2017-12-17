@@ -10,7 +10,7 @@ sudo apt -y install git
 sudo apt -y install vim
 sudo apt -y install clang
 sudo apt -y install cmake
-
+sudo apt -y install htop
 # install shadowsocks-qt5
 #read -p "Do you want to install shadowsocks-qt5?(y/n)" choice_ssqt5
 #case $choice_ssqt5 in
@@ -94,7 +94,7 @@ read -p "Do you want to install shadowsocks pyhton?(y/n)" choice_sspython
 case $choice_sspython in
   y|Y|yes|Yes|YES)
   echo "Start installing shadowsocks python:"
-  sudo apt-get install python-pip
+  sudo apt -y install python-pip
   sudo pip install --upgrade pip
   pip install git+https://github.com/shadowsocks/shadowsocks.git@master
   ;;
@@ -110,12 +110,26 @@ read -p "Do you want to install tmux & tmuxinator?(y/n)" choice_tmux
 case $choice_tmux in
   y|Y|yes|Yes|YES)
   echo "Start installing tmux & tmuxinator:"
-  sudo apt install tmux
-  sudo apt install ruby
+  sudo apt -y install tmux
+  sudo apt -y install ruby
   sudo gem install tmuxinator
   ;;
   *)
   echo "shadowsocks python will NOT be installed"
+  ;;
+esac
+
+# copy dotfile from yyj
+read -p "Do you want to copy yyj's dotfile?(y/n)" choice_dotfile
+case $choice_dotfile in
+  y|Y|yes|Yes|YES)
+  echo "git clone from yyj's dotfile"
+  cd
+  git clone https://github.com/MeetYyj/dotfile.git
+  cp -r $HOME/dotfile $HOME
+  ;;
+  *)
+  echo "yyj's dotfile will NOT be installed"
   ;;
 esac
 
@@ -140,8 +154,8 @@ case $choice_zsh in
   echo "Start installing zsh:"
   sudo apt -y install zsh
   sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
-  echo "export http_proxy=http://127.0.0.1:1080" >> $HOME/.zshrc
-  echo "export https_proxy=\$http_proxy" >> $HOME/.zshrc
+#  echo "export http_proxy=http://127.0.0.1:1080" >> $HOME/.zshrc
+#  echo "export https_proxy=\$http_proxy" >> $HOME/.zshrc
   ;;
   *)
   echo "zsh will NOT be installed"
