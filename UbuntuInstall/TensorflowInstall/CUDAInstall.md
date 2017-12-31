@@ -1,10 +1,12 @@
+#!!!!!!!!!!!!!!!!!!!!!!
+#Ctrl+Alt+F1切换到tty界面
+
+
 #禁用开源的Nouveau驱动
 sudo cp blacklist-nouveau.conf /etc/modprobe.d/
 sudo update-initramfs -u
 #安装显卡驱动
 sudo apt install nvidia-375
-#!!!!!!!!!!!!!!!!!!!!!!
-#Ctrl+Alt+F1切换到tty界面
 #关闭X Server
 sudo service lightdm stop
 #安装依赖
