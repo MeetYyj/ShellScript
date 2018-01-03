@@ -16,7 +16,27 @@ cd mjpg-streamer-master/mjpg-streamer-experimental
 make
 sudo make install
 cd /etc/init.d
-cp $PWD/wifirobot.sh .
+sudo cp $cur_dir/wifirobot.sh .
 sudo update-rc.d wifirobot.sh defaults 95
 
+# install potocol buffers 3.5.0
+# need almost 120 minutes
+cd $HOME/Software
+cp $cur_dir/protobuf-cpp-3.5.0.zip .
+unzip protobuf-cpp-3.5.0.zip
+cd protobuf-3.5.0
+sudo apt -y install autoconf automake libtool curl make g++ unzip
+./configure
+make
+make check
+sudo make install
+sudo ldconfig
+
+
+cd $HOME
 git clone https://github.com/MeetYyj/Robot306.git
+cd Robot306
+mkdir bin
+cd bin
+cmake ..
+make
