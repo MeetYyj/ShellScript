@@ -3,6 +3,6 @@
 # install cudnn
 # install tensorflow
 sudo apt install python3-pip python3-dev
-echo "index-url = http://pypi.douban.com/simple" >> $HOME/.pip/pipconf
-pip3 install tensorflow-gpu
+echo "index-url = https://pypi.tuna.tsinghua.edu.cn/simple" >> $HOME/.pip/pipconf
+sudo pip3 install tensorflow-gpu
 
