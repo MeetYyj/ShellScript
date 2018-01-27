@@ -5,6 +5,9 @@ sudo apt update
 #install vim
 sudo apt install -y vim
 sudo apt install -y git
+sudo apt install -y ssh
+sudo apt install -y openssh-server openssh-client
+sudo apt install -y htop
 #install mjpg_streamer
 sudo apt install -y cmake libjpeg8-dev
 mkdir $HOME/Software
