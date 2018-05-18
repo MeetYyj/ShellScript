@@ -35,6 +35,8 @@ make check
 sudo make install
 sudo ldconfig
 
+# install boost lib
+sudo apt -y install libboost-all-dev
 
 cd $HOME
 git clone https://github.com/MeetYyj/Robot306.git
