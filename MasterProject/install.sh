@@ -54,3 +54,6 @@ sudo sh -c "echo "force_turbo=1" >> /boot/config.txt"
 sudo cp uart/config.txt /boot/config.txt
 sudo systemctl disable hciuart
 sudo cp hciuart.service /lib/systemd/system/
+
+# run demo at starting up
+sudo cp rc.local /etc/
