@@ -47,12 +47,10 @@ cmake ..
 make
 
 # change uart
-sudo cp pi3-miniuart-bt-overlay.dtb /boot/overlays/
-sudo echo "dtoverlay=pi3-miniuart-bt-overlay" >> /boot/config.txt
-sudo echo "force_turbo=1" >> /boot/config.txt
-sudo vim /boot/cmdline.txt
-# dwc_otg.lpm_enable=0 console=serial1,115200  console=tty1 root=/dev/mmcblk0p2  kgdboc=serial1,115200 rootfstype=ext4 elevator=deadline fsck.repair=yes  rootwait
-
+# http://shumeipai.nxez.com/2016/08/08/solution-raspberry-pi3-serial-uart-use-issues.html
+sudo cp uart/pi3-miniuart-bt-overlay.dtb /boot/overlays/
+sudo sh -c "echo "dtoverlay=pi3-miniuart-bt-overlay" >> /boot/config.txt"
+sudo sh -c "echo "force_turbo=1" >> /boot/config.txt"
+sudo cp uart/config.txt /boot/config.txt
 sudo systemctl disable hciuart
-sudo vim /lib/systemd/system/hciuart.service
-# change ttyAMA0 -> ttyS0
+sudo cp hciuart.service /lib/systemd/system/

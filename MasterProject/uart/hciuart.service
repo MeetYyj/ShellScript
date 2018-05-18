@@ -1,0 +1,17 @@
+[Unit]
+Description=Configure Bluetooth Modems connected by UART
+ConditionPathIsDirectory=/proc/device-tree/soc/gpio@7e200000/bt_pins
+Before=bluetooth.service
+After=dev-serial1.device
+
+[Service]
+Type=forking
+ExecStart=/usr/bin/hciattach /dev/ttyS0 bcm43xx 115200 noflow -
+# ExecStart=/usr/bin/hciattach /dev/ttyS0 bcm43xx 921600 noflow -
+# Restart=always
+# RestartSec=15
+# StartLimitInterval=100
+# StartLimitBurst=6
+
+[Install]
+WantedBy=multi-user.target
