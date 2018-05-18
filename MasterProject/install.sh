@@ -45,3 +45,14 @@ mkdir bin
 cd bin
 cmake ..
 make
+
+# change uart
+sudo cp pi3-miniuart-bt-overlay.dtb /boot/overlays/
+sudo echo "dtoverlay=pi3-miniuart-bt-overlay" >> /boot/config.txt
+sudo echo "force_turbo=1" >> /boot/config.txt
+sudo vim /boot/cmdline.txt
+# dwc_otg.lpm_enable=0 console=serial1,115200  console=tty1 root=/dev/mmcblk0p2  kgdboc=serial1,115200 rootfstype=ext4 elevator=deadline fsck.repair=yes  rootwait
+
+sudo systemctl disable hciuart
+sudo vim /lib/systemd/system/hciuart.service
+# change ttyAMA0 -> ttyS0
