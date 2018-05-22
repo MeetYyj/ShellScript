@@ -38,6 +38,9 @@ sudo ldconfig
 # install boost lib
 sudo apt -y install libboost-all-dev
 
+# install eigen3
+sudo apt -y install libeigen3-dev
+
 cd $HOME
 git clone https://github.com/MeetYyj/Robot306.git
 cd Robot306
