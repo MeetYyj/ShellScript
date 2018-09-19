@@ -10,6 +10,9 @@ sudo apt install -y openssh-server openssh-client
 sudo apt install -y htop
 #install mjpg_streamer
 sudo apt install -y cmake libjpeg8-dev
+#install yaml-cpp-dev
+sudo apt install -y libyaml-cpp-dev
+#sudo apt install -y libyaml-cpp0.5v5
 mkdir $HOME/Software
 cd $HOME/Software
 sudo wget https://github.com/jacksonliam/mjpg-streamer/archive/master.zip

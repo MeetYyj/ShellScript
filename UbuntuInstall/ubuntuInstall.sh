@@ -11,6 +11,7 @@ sudo apt -y install vim
 sudo apt -y install clang
 sudo apt -y install cmake
 sudo apt -y install htop
+sudo apt -y install libyaml-cpp-dev
 # install shadowsocks-qt5
 #read -p "Do you want to install shadowsocks-qt5?(y/n)" choice_ssqt5
 #case $choice_ssqt5 in
